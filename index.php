@@ -232,7 +232,7 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 							var text = $(this).children().text();
 
 							if (prize) {
-								$("#log").append('The Winner of the <strong style="font-size:25px">' + prize + '</strong> is<br/> <span class=\"badge\">' + text + '</span>');
+								$("#log").append('The Winner of the <strong style="font-size:18px">' + prize + '</strong> is<br/> <span class=\"badge\">' + text + '</span>');
 							} else {
 								$("#log").append("The Winner is<br/> <span class=\"badge\">" + text + "</span>");
 							}
