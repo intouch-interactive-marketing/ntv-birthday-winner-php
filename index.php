@@ -148,6 +148,11 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 			</div>
 		</div>
 	</div>
+	<p style="
+	    position: fixed;
+    	bottom: 10px;
+    	left: 45%;
+    	color: #fff;">Developed By: <a style="margin-left: 20px;" href="https://intouch.com.na" target="_blank"><img width="76px" src="<?= $url ?>img/intouch.png" alt=""></a></p>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script>
 		var winners = [];
