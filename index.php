@@ -234,7 +234,7 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 							if (prize) {
 
 								var text = $(this).children().text();
-								$("#log").append('The Winner of the <strong style="font-size:18px">' + prize + '</strong> is<br/> <span class=\"badge\">' + text + '</span>');
+								$("#log").append('The Winner of the <strong style="font-size:18px">' + prize.toUpperCase() + '</strong> is<br/> <span class=\"badge\">' + text + '</span>');
 								winners[winners.length] = text
 							}
 
