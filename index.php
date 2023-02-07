@@ -154,7 +154,8 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 		var prizes = [
 			'DStv Dish Kit',
 			'DStv Explora',
-			'GOtv Decoder',
+			'First GOtv Decoder',
+			'Second GOtv Decoder',
 			'Shopping Voucher worth N$3 000 from the Foschini Group'
 		];
 		$(document).ready(function() {
