@@ -105,6 +105,10 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 </head>
 
 <body>
+	<a href="https://github.com/intouch-interactive-marketing/ntv-birthday-winner-php" target="_blank" class="btn btn-outline btn-primary" style="    
+	position: fixed;
+    bottom: 20px;
+    left: 10px;">Source Code</a>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-3" style="display: flex;align-items: center;justify-content: center;">
@@ -147,6 +151,12 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script>
 		var winners = [];
+		var prizes = [
+			'DStv Dish Kit',
+			'DStv Explora',
+			'GOtv Decoder',
+			'Shopping Voucher worth N$3 000 from the Foschini Group'
+		];
 		$(document).ready(function() {
 
 			var users = [],
@@ -215,23 +225,19 @@ $url .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME
 						var center = window.innerWidth / 2;
 						if ($(this).offset().left < center && $(this).offset().left + 250 > center) {
 
+							var prizeIndex = Math.floor(Math.random() * prizes.length);
+							var prize = prizes[prizeIndex];
+							prizes.splice(prizeIndex, 1);
+
 							var text = $(this).children().text();
-							$("#log").append("THE WINNER IS<br/> <span class=\"badge\">" + text + "</span>");
+
+							if (prize) {
+								$("#log").append('The Winner of the <strong style="font-size:25px">' + prize + '</strong> is<br/> <span class=\"badge\">' + text + '</span>');
+							} else {
+								$("#log").append("The Winner is<br/> <span class=\"badge\">" + text + "</span>");
+							}
+
 							winners[winners.length] = text
-
-
-							// This offset : 33698.25
-							// Center      : 681.5
-							// Center + 185: 33698.25185
-
-
-							// This offset :33462.25
-							// Center :681.5
-							// Center + 185 :33462.25185
-							// } else {
-							// 	console.log('This offset :' + $(this).offset().left);
-							// 	console.log('Center :' + center);
-							// 	console.log('Center + 185 :' + $(this).offset().left + 185);
 						}
 					});
 
